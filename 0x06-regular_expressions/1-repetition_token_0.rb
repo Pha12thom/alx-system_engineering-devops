@@ -7,9 +7,9 @@ pattern = /^(My)?High?School$/
 # Check if the input argument matches the pattern
 def match_school(input, pattern)
   if input.match?(pattern)
-    puts "#{input} matches the pattern 'School'"
+    puts "#{input}"
   else
-    puts "#{input} does not match the pattern 'School'"
+    puts "#{input}"
   end
 end
 
@@ -18,6 +18,6 @@ if ARGV.length == 1
   input_argument = ARGV[0]
   match_school(input_argument, pattern)
 else
-  puts "Usage: ruby myscript.rb <argument>"
+  puts "<argument>"
 end
 
