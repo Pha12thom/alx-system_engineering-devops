@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-#!/bin/bash
+# Displays all acive IPv4 addresses on the machine.
 
-# Use ifconfig to fetch network interface information and grep for IPv4 addresses
-ip -4 addr show | grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b'
+# a different way using ifconfig but now ip is a new command and ifconfig can be missing in some os
+#ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | awk '{print $2}'
 
+ip -4 -o addr show | awk '{print $4}' | cut -d "/" -f 1
